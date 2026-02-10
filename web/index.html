@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Storage Monitor - TimeWeb Cloud</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h1>S3 Storage Monitor</h1>
+            </div>
+            <div class="status" id="serverStatus">
+                <span class="status-indicator offline"></span>
+                <span>Подключение...</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="sidebar">
+                <nav class="nav">
+                    <button class="nav-btn active" data-view="images">
+                        <i class="fas fa-images"></i> Изображения
+                    </button>
+                    <button class="nav-btn" data-view="documents">
+                        <i class="fas fa-file-alt"></i> Документы
+                    </button>
+                    <button class="nav-btn" data-view="uploader">
+                        <i class="fas fa-upload"></i> Загрузчик
+                    </button>
+                    <button class="nav-btn" data-view="stats">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </button>
+                </nav>
+
+                <div class="server-info">
+                    <h3><i class="fas fa-server"></i> Информация</h3>
+                    <div class="info-item">
+                        <span>Порт:</span>
+                        <span id="infoPort">5050</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Режим:</span>
+                        <span id="infoMode">development</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Время:</span>
+                        <span id="infoTime">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- Вкладка Изображения -->
+                <div class="view active" id="imagesView">
+                    <h2><i class="fas fa-search"></i> Поиск изображений</h2>
+                    
+                    <div class="search-controls">
+                        <div class="search-group">
+                            <h3>По группе</h3>
+                            <select id="groupSelect">
+                                <option value="res72">Группа 72</option>
+                                <option value="res73">Группа 73</option>
+                                <option value="res74">Группа 74</option>
+                                <option value="res75">Группа 75</option>
+                                <option value="res76">Группа 76</option>
+                                <option value="pirs1">PIRS 1</option>
+                            </select>
+                            <div class="date-range">
+                                <input type="datetime-local" id="fromDate">
+                                <span>до</span>
+                                <input type="datetime-local" id="toDate">
+                            </div>
+                            <button id="searchByGroup" class="btn-primary">
+                                <i class="
